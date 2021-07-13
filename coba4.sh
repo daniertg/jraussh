@@ -320,11 +320,10 @@ rm -f /root/openssh.sh
 rm -f /root/ins-vt.sh
 history -c
 echo "1.2" > /home/ver
-clear
-echo " "
+echo ""
 clear
 echo "Installation has been completed!!"
-echo " "
+echo ""
 echo "Autoscript Include:" | tee log-install.txt
 echo "===========================================" | tee -a log-install.txt
 echo ""  | tee -a log-install.txt
