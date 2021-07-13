@@ -19,5 +19,5 @@ echo -e "* reboot          : reboot VPS"
 echo -e "* speedtest       : speedtest VPS"
 echo -e "* info            : menampilkan informasi sistem
 echo -e "* exit            : keluar dari Putty/Connecbot/"
-echo -e "              JuiceSSH"
+echo -e "                    JuiceSSH"
 echo -e " CREATOR BY FEBRIAN DANI RITONGA"
