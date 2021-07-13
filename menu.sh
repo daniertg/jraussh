@@ -18,6 +18,5 @@ echo -e "* renew-v2ray     : perpanjang akun v2ray"
 echo -e "* reboot          : reboot VPS"
 echo -e "* speedtest       : speedtest VPS"
 echo -e "* info            : menampilkan informasi sistem
-echo -e "* exit            : keluar dari Putty/Connecbot/"
-echo -e "                    JuiceSSH"
+echo -e "* exit            : keluar dari Putty
 echo -e " CREATOR BY FEBRIAN DANI RITONGA"
