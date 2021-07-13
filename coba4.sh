@@ -387,4 +387,4 @@ echo "========================================================="
 #/etc/init.d/openvpn restart
 
 # Delete script
-rm -f /root/deb10.sh
+rm -f /root/coba4.sh
