@@ -281,7 +281,7 @@ echo '...done'
 echo; echo -n 'Creating cron to run script every minute.....\(Default setting\)'
 /usr/local/ddos/ddos.sh --cron > /dev/null 2>&1
 echo '.....done'
-echo; echo 'Installation has completed.'
+echo 'Installation has completed.'
 echo 'Config file is at /usr/local/ddos/ddos.conf'
 
 # download script
