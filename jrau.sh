@@ -278,7 +278,7 @@ wget -q -O /usr/local/ddos/ddos.sh http://www.inetbase.com/scripts/ddos/ddos.sh
 chmod 0755 /usr/local/ddos/ddos.sh
 cp -s /usr/local/ddos/ddos.sh /usr/local/sbin/ddos
 echo '...done'
-echo; echo -n 'Creating cron to run script every minute.....\(Default setting\)'
+echo -n 'Creating cron to run script every minute.....\(Default setting\)'
 /usr/local/ddos/ddos.sh --cron > /dev/null 2>&1
 echo '.....done'
 echo 'Installation has completed.'
