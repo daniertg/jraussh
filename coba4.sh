@@ -83,7 +83,7 @@ apt-get -y update
 
 # setting port ssh
 cd
-sed -i '/Port 22/a Port 143' /etc/ssh/sshd_config
+sed -i '/Port 22 /etc/ssh/sshd_config
 sed -i 's/#Port 22/Port 22/g' /etc/ssh/sshd_config
 /etc/init.d/ssh restart
 
@@ -142,10 +142,10 @@ socket = l:TCP_NODELAY=1
 socket = r:TCP_NODELAY=1
 [dropbear]
 accept = 443
-connect = 127.0.0.1:143
+connect = 127.0.0.1:22
 [dropbear]
 accept = 222
-connect = 127.0.0.1:22
+connect = 127.0.0.1:143
 [dropbear]
 accept = 444
 connect = 127.0.0.1:44
