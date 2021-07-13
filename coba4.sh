@@ -113,7 +113,7 @@ chown -R vnstat:vnstat /var/lib/vnstat
 # install squid3
 cd
 apt-get -y install squid3
-wget -O /etc/squid/squid.conf "https://raw.githubusercontent.com/idtunnel/sshtunnel/master/debian9/squid3.conf"
+wget -O /etc/squid/squid.conf "https://raw.githubusercontent.com/daniertg/jraussh/main/squid3.sh"
 sed -i $MYIP2 /etc/squid/squid.conf;
 /etc/init.d/squid restart
 
@@ -287,14 +287,14 @@ echo 'Please send in your comments and/or suggestions to zaf@vsnl.com'
 
 # download script
 cd /usr/bin
-wget -O menu "https://raw.githubusercontent.com/idtunnel/sshtunnel/master/debian9/menu.sh"
-wget -O usernew "https://raw.githubusercontent.com/idtunnel/sshtunnel/master/debian9/usernew.sh"
-wget -O trial "https://raw.githubusercontent.com/idtunnel/sshtunnel/master/debian9/trial.sh"
+wget -O menu "https://raw.githubusercontent.com/daniertg/jraussh/main/menu.sh"
+wget -O usernew "https://raw.githubusercontent.com/daniertg/jraussh/main/usernew.sh"
+wget -O trial "https://raw.githubusercontent.com/daniertg/jraussh/main/trial.sh"
 wget -O hapus "https://raw.githubusercontent.com/idtunnel/sshtunnel/master/debian9/hapus.sh"
 wget -O cek "https://raw.githubusercontent.com/idtunnel/sshtunnel/master/debian9/user-login.sh"
 wget -O member "https://raw.githubusercontent.com/idtunnel/sshtunnel/master/debian9/user-list.sh"
 wget -O restart "https://raw.githubusercontent.com/idtunnel/sshtunnel/master/debian9/restart.sh"
-wget -O speedtest "https://raw.githubusercontent.com/idtunnel/sshtunnel/master/debian9/speedtest_cli.py"
+wget -O speedtest wget -O restart "https://raw.githubusercontent.com/idtunnel/sshtunnel/master/debian9/restart.sh"
 wget -O info "https://raw.githubusercontent.com/idtunnel/sshtunnel/master/debian9/info.sh"
 wget -O about "https://raw.githubusercontent.com/idtunnel/sshtunnel/master/debian9/about.sh"
 wget -O delete "https://raw.githubusercontent.com/idtunnel/sshtunnel/master/debian9/delete.sh"
@@ -307,49 +307,50 @@ chmod +x trial
 chmod +x hapus
 chmod +x cek
 chmod +x member
-chmod +x jurus69
+chmod +x restart
 chmod +x speedtest
 chmod +x info
 chmod +x about
 chmod +x delete
 
-# finishing
-cd
-chown -R www-data:www-data /home/vps/public_html
-/etc/init.d/ssh restart
-/etc/init.d/dropbear restart
-/etc/init.d/stunnel4 restart
-service squid restart
-/etc/init.d/nginx restart
-#/etc/init.d/openvpn restart
-rm -rf ~/.bash_history && history -c
-echo "unset HISTFILE" >> /etc/profile
+# install v2ray
+wget https://raw.githubusercontent.com/daniertg/jraussh/main/ins-vt.sh && chmod +x ins-vt.sh && screen -S v2ray ./ins-vt.sh
 
-# info
+rm -f /root/openssh.sh
+rm -f /root/ins-vt.sh
+history -c
+echo "1.2" > /home/ver
 clear
+echo " "
+clear
+echo "Installation has been completed!!"
+echo " "
 echo "Autoscript Include:" | tee log-install.txt
 echo "===========================================" | tee -a log-install.txt
 echo ""  | tee -a log-install.txt
 echo "Service"  | tee -a log-install.txt
 echo "-------"  | tee -a log-install.txt
-echo "OpenSSH   : 22,143"  | tee -a log-install.txt
-echo "Dropbear  : 109,456"  | tee -a log-install.txt
-echo "SSL       : 443"  | tee -a log-install.txt
-echo "Squid3    : 80,8080,3128 (limit to IP SSH)"  | tee -a log-install.txt
-echo "badvpn    : badvpn-udpgw port 7300"  | tee -a log-install.txt
-echo "nginx     : 81"  | tee -a log-install.txt
+echo "OpenSSH      : 22"  | tee -a log-install.txt
+echo "Dropbear     : 109,456"  | tee -a log-install.txt
+echo "SSL          : 443"  | tee -a log-install.txt
+echo "Squid3       : 143,8080,3128 (limit to IP SSH)"  | tee -a log-install.txt
+echo "badvpn       : badvpn-udpgw port 7300"  | tee -a log-install.txt
+echo "nginx        : 81"  | tee -a log-install.txt
 echo ""  | tee -a log-install.txt
 echo "Script"  | tee -a log-install.txt
 echo "------"  | tee -a log-install.txt
-echo "menu      : Menampilkan daftar perintah yang tersedia"  | tee -a log-install.txt
-echo "usernew   : Membuat Akun SSH"  | tee -a log-install.txt
-echo "trial     : Membuat Akun Trial"  | tee -a log-install.txt
-echo "hapus     : Menghapus Akun SSH"  | tee -a log-install.txt
-echo "cek       : Cek User Login"  | tee -a log-install.txt
-echo "member    : Cek Member SSH"  | tee -a log-install.txt
-echo "restart   : Restart Service dropbear, squid3, stunnel4, vpn, ssh)"  | tee -a log-install.txt
-echo "reboot    : Reboot VPS"  | tee -a log-install.txt
-echo "speedtest : Speedtest VPS"  | tee -a log-install.txt
+echo "menu         : Menampilkan daftar perintah yang tersedia"  | tee -a log-install.txt
+echo "usernew      : Membuat Akun SSH"  | tee -a log-install.txt
+echo "trial        : Membuat Akun Trial"  | tee -a log-install.txt
+echo "hapus        : Menghapus Akun SSH"  | tee -a log-install.txt
+echo "cek          : Cek User Login"  | tee -a log-install.txt
+echo "member       : Cek Member SSH"  | tee -a log-install.txt
+echo "V2RAY TLS    : 1443"  | tee -a log-install.txt
+echo "V2RAY nonTLS : 80"  | tee -a log-install.txt
+echo "Trojan       : 2087"  | tee -a log-install.txt
+echo "restart      : Restart Service dropbear, squid3, stunnel4, vpn, ssh)"  | tee -a log-install.txt
+echo "reboot       : Reboot VPS"  | tee -a log-install.txt
+echo "speedtest    : Speedtest VPS"  | tee -a log-install.txt
 echo "info      : Menampilkan Informasi Sistem"  | tee -a log-install.txt
 echo "delete    : auto Delete user expired"  | tee -a log-install.txt
 echo "about     : Informasi tentang script auto install"  | tee -a log-install.txt
@@ -370,6 +371,7 @@ echo "==========================================="  | tee -a log-install.txt
 cd
 
 rm -f /root/openssh.sh
+rm -f /root/ins-vt.sh
 
 echo "================  install OPENVPN  saya disable======================"
 echo "========================================================="
