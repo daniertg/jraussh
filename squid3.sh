@@ -2,7 +2,7 @@ acl manager proto cache_object
 acl localhost src 127.0.0.1/32 ::1
 acl to_localhost dst 127.0.0.0/8 0.0.0.0/32 ::1
 acl SSL_ports port 443
-acl Safe_ports port 143
+acl Safe_ports port 10
 acl Safe_ports port 21
 acl Safe_ports port 443
 acl Safe_ports port 70
