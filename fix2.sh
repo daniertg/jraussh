@@ -113,9 +113,9 @@ chown -R vnstat:vnstat /var/lib/vnstat
 # install squid3
 cd
 apt-get -y install squid3
-wget -O /etc/squid/squid.conf "https://raw.githubusercontent.com/daniertg/jraussh/main/squid3.sh"
+wget -O /etc/squid/squid.conf "https://raw.githubusercontent.com/daniertg/jraussh/main/squid3.conf"
 sed -i $MYIP2 /etc/squid/squid.conf;
-/etc/init.d/squid restart
+service squid restart
 
 echo "=================  saya matikan install Webmin  ======================"
 echo "========================================================="
@@ -297,7 +297,7 @@ wget -O restart "https://raw.githubusercontent.com/idtunnel/sshtunnel/master/deb
 wget -O speedtest "https://raw.githubusercontent.com/idtunnel/sshtunnel/master/debian9/speedtest_cli.py"
 wget -O delete "https://raw.githubusercontent.com/idtunnel/sshtunnel/master/debian9/delete.sh"
 
-echo "0 0 * * * root /sbin/reboot" > /etc/cron.d/reboot
+echo "0 0 * * * root /bin/reboot" > /etc/cron.d/reboot
 
 chmod +x menu
 chmod +x usernew
@@ -323,6 +323,50 @@ service squid restart
 rm -rf ~/.bash_history && history -c
 echo "unset HISTFILE" >> /etc/profile
 
+# info
+clear
+echo "=================================-Autoscript Premium-===========================" | tee -a log-install.txt
+echo "" | tee -a log-install.txt
+echo "--------------------------------------------------------------------------------" | tee -a log-install.txt
+echo ""  | tee -a log-install.txt
+echo "   >>> Service & Port"  | tee -a log-install.txt
+echo "   - OpenSSH                 : 22"  | tee -a log-install.txt
+echo "   - OpenVPN                 : TCP 1194, UDP 2200, SSL 442"  | tee -a log-install.txt
+echo "   - Stunnel4                : 443, 777"  | tee -a log-install.txt
+echo "   - Dropbear                : 109, 143"  | tee -a log-install.txt
+echo "   - Squid Proxy             : 3128, 8080 (limit to IP Server)"  | tee -a log-install.txt
+echo "   - Badvpn                  : 7100, 7200, 7300"  | tee -a log-install.txt
+echo "   - Nginx                   : 81"  | tee -a log-install.txt
+echo "   - Wireguard               : 7070"  | tee -a log-install.txt
+echo "   - L2TP/IPSEC VPN          : 1701"  | tee -a log-install.txt
+echo "   - PPTP VPN                : 1732"  | tee -a log-install.txt
+echo "   - SSTP VPN                : 444"  | tee -a log-install.txt
+echo "   - Shadowsocks-R           : 1443-1543"  | tee -a log-install.txt
+echo "   - SS-OBFS TLS             : 2443-2543"  | tee -a log-install.txt
+echo "   - SS-OBFS HTTP            : 3443-3543"  | tee -a log-install.txt
+echo "   - V2RAY Vmess TLS         : 8443"  | tee -a log-install.txt
+echo "   - V2RAY Vmess None TLS    : 80"  | tee -a log-install.txt
+echo "   - V2RAY Vless TLS         : 2083"  | tee -a log-install.txt
+echo "   - V2RAY Vless None TLS    : 8880"  | tee -a log-install.txt
+echo "   - Trojan                  : 2087"  | tee -a log-install.txt
+echo ""  | tee -a log-install.txt
+echo "   >>> Server Information & Other Features"  | tee -a log-install.txt
+echo "   - Timezone                : Asia/Jakarta (GMT +7)"  | tee -a log-install.txt
+echo "   - Fail2Ban                : [ON]"  | tee -a log-install.txt
+echo "   - Dflate                  : [ON]"  | tee -a log-install.txt
+echo "   - IPtables                : [ON]"  | tee -a log-install.txt
+echo "   - Auto-Reboot             : [ON]"  | tee -a log-install.txt
+echo "   - IPv6                    : [OFF]"  | tee -a log-install.txt
+echo "   - Autoreboot On 05.00 GMT +7" | tee -a log-install.txt
+echo "   - Autobackup Data" | tee -a log-install.txt
+echo "   - Restore Data" | tee -a log-install.txt
+echo "   - Auto Delete Expired Account" | tee -a log-install.txt
+echo "   - Full Orders For Various Services" | tee -a log-install.txt
+echo "   - White Label" | tee -a log-install.txt
+echo "   - Installation Log --> /root/log-install.txt"  | tee -a log-install.txt
+echo ""  | tee -a log-install.txt
+echo "------------------Script Created By Febrian Dani Ritonga-----------------" | tee -a log-install.txt
+echo ""
 cd
 
 rm -f /root/openssh.sh
@@ -347,4 +391,4 @@ echo "========================================================="
 #/etc/init.d/openvpn restart
 
 # Delete script
-rm -f /root/deb10.sh
+rm -f /root/fix2.sh
