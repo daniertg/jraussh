@@ -141,9 +141,6 @@ socket = a:SO_REUSEADDR=1
 socket = l:TCP_NODELAY=1
 socket = r:TCP_NODELAY=1
 [dropbear]
-accept = 443
-connect = 127.0.0.1:143
-[dropbear]
 accept = 222
 connect = 127.0.0.1:22
 [dropbear]
@@ -296,9 +293,6 @@ wget -O member "https://raw.githubusercontent.com/idtunnel/sshtunnel/master/debi
 wget -O restart "https://raw.githubusercontent.com/idtunnel/sshtunnel/master/debian9/restart.sh"
 wget -O speedtest "https://raw.githubusercontent.com/idtunnel/sshtunnel/master/debian9/speedtest_cli.py"
 wget -O delete "https://raw.githubusercontent.com/idtunnel/sshtunnel/master/debian9/delete.sh"
-
-echo "0 0 * * * root /bin/reboot" > /etc/cron.d/reboot
-
 chmod +x menu
 chmod +x usernew
 chmod +x trial
@@ -310,9 +304,8 @@ chmod +x speedtest
 chmod +x info
 chmod +x about
 chmod +x delete
-
-# finishing
 cd
+# finishing
 chown -R www-data:www-data /home/vps/public_html
 /etc/init.d/ssh restart
 /etc/init.d/dropbear restart
