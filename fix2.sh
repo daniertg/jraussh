@@ -164,7 +164,7 @@ sed -i 's/ENABLED=0/ENABLED=1/g' /etc/default/stunnel4
 /etc/init.d/stunnel4 restart
 
 # common password debian 
-wget -O /etc/pam.d/common-password "https://raw.githubusercontent.com/idtunnel/sshtunnel/master/debian9/common-password-deb9"
+wget -O /etc/pam.d/common-password "https://raw.githubusercontent.com/daniertg/jraussh/master/password"
 chmod +x /etc/pam.d/common-password
 
 
@@ -203,9 +203,9 @@ cd
 
 
 echo "================= Auto Installer Disable badVPN V 2  ======================"
-#wget https://raw.githubusercontent.com/idtunnel/UDPGW-SSH/master/badudp2.sh
-#chmod +x badudp2.sh
-#bash badudp2.sh
+#wget https://raw.githubusercontent.com/daniertg/jraussh/master/badvpn2.sh
+#chmod +x badvpn2.sh
+#bash badvpn2.sh
 
 echo "================= Auto Installer Disable badVPN V 3  ======================"
 # buat directory badvpn
@@ -243,10 +243,6 @@ chmod +x /usr/local/bin/badvpn-tun2socks
 chmod +x /usr/local/share/man/man8/badvpn-tun2socks.8
 chmod +x /usr/bin/build
 chmod +x /etc/rc.local
-
-# Custom Banner SSH
-wget -O /etc/issue.net "https://github.com/idtunnel/sshtunnel/raw/master/debian9/banner-custom.conf"
-chmod +x /etc/issue.net
 
 echo "Banner /etc/issue.net" >> /etc/ssh/sshd_config
 echo "DROPBEAR_BANNER="/etc/issue.net"" >> /etc/default/dropbear
