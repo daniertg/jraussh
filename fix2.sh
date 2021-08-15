@@ -284,15 +284,15 @@ echo 'Please send in your comments and/or suggestions to zaf@vsnl.com'
 
 # download script
 cd /usr/bin
-wget -O menu "https://raw.githubusercontent.com/daniertg/jraussh/main/menu.sh"
-wget -O usernew "https://raw.githubusercontent.com/daniertg/jraussh/main/usernew.sh"
-wget -O trial "https://raw.githubusercontent.com/daniertg/jraussh/main/trial.sh"
-wget -O hapus "https://raw.githubusercontent.com/idtunnel/sshtunnel/master/debian9/hapus.sh"
-wget -O cek "https://raw.githubusercontent.com/idtunnel/sshtunnel/master/debian9/user-login.sh"
-wget -O member "https://raw.githubusercontent.com/idtunnel/sshtunnel/master/debian9/user-list.sh"
-wget -O restart "https://raw.githubusercontent.com/idtunnel/sshtunnel/master/debian9/restart.sh"
-wget -O speedtest "https://raw.githubusercontent.com/idtunnel/sshtunnel/master/debian9/speedtest_cli.py"
-wget -O delete "https://raw.githubusercontent.com/idtunnel/sshtunnel/master/debian9/delete.sh"
+wget -O menu "https://raw.githubusercontent.com/daniertg/jraussh/master/menu.sh"
+wget -O usernew "https://raw.githubusercontent.com/daniertg/jraussh/master/usernew.sh"
+wget -O trial "https://raw.githubusercontent.com/daniertg/jraussh/master/trial.sh"
+wget -O hapus "https://raw.githubusercontent.com/daniertg/jraussh/master/hapus.sh"
+wget -O cek "https://raw.githubusercontent.com/daniertg/jraussh/master/cek.sh"
+wget -O member "https://raw.githubusercontent.com/daniertg/jraussh/master/member.sh"
+wget -O restart "https://raw.githubusercontent.com/daniertg/jraussh/master/restart.sh"
+wget -O speedtest "https://raw.githubusercontent.com/daniertg/jraussh/master/speedtest.sh"
+wget -O delete "https://raw.githubusercontent.com/daniertg/jraussh/master/delete.sh"
 chmod +x menu
 chmod +x usernew
 chmod +x trial
