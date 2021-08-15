@@ -1,7 +1,6 @@
 !/bin/bash
 #
-# Script Copyright HideSSH
-# Mod by hideSSH
+# Mod by danirtg
 # ==========================
 # 
 
