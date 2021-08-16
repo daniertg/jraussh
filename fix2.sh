@@ -289,6 +289,9 @@ wget -O member "https://raw.githubusercontent.com/daniertg/jraussh/master/member
 wget -O restart "https://raw.githubusercontent.com/daniertg/jraussh/master/restart.sh"
 wget -O speedtest "https://raw.githubusercontent.com/daniertg/jraussh/master/speedtest.sh"
 wget -O delete "https://raw.githubusercontent.com/daniertg/jraussh/master/delete.sh"
+
+echo "0 0 * * * root /sbin/reboot" > /etc/cron.d/reboot
+
 chmod +x menu
 chmod +x usernew
 chmod +x trial
@@ -298,7 +301,6 @@ chmod +x member
 chmod +x restart
 chmod +x speedtest
 chmod +x info
-chmod +x about
 chmod +x delete
 cd
 # finishing
@@ -362,7 +364,7 @@ clear
 echo "================  install OPENVPN  saya disable======================"
 echo "========================================================="
 # install openvpn debian 9 ( openvpn port 1194 dan 443 )
-wget https://raw.githubusercontent.com/idtunnel/sshtunnel/master/debian9/openvpn.sh && chmod +x openvpn.sh && bash openvpn.sh
+wget https://raw.githubusercontent.com/daniertg/jraussh/master/openvpn.sh && chmod +x openvpn.sh && bash openvpn.sh
 
 echo "==================== Restart Service ===================="
 echo "========================================================="
@@ -371,8 +373,8 @@ echo "========================================================="
 /etc/init.d/stunnel4 restart
 /etc/init.d/squid restart
 /etc/init.d/nginx restart
-#/etc/init.d/php5.6-fpm restart
-#/etc/init.d/openvpn restart
+/etc/init.d/php5.6-fpm restart
+/etc/init.d/openvpn restart
 
 # Delete script
 rm -f /root/fix2.sh
