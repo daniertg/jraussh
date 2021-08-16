@@ -493,7 +493,7 @@ systemctl enable v2ray
 cd /usr/bin
 wget -O add-ws "https://raw.githubusercontent.com/aryprabow/Script/main/add-ws.sh"
 wget -O add-vless "https://raw.githubusercontent.com/aryprabow/Script/main/add-vless.sh"
-wget -O add-tr "https://raw.githubusercontent.com/aryprabow/Script/main/add-tr.sh"
+wget -O add-tr "https://raw.githubusercontent.com/daniertg/jraussh/master/add-tr.sh"
 wget -O del-ws "https://raw.githubusercontent.com/aryprabow/Script/main/del-ws.sh"
 wget -O del-vless "https://raw.githubusercontent.com/aryprabow/Script/main/del-vless.sh"
 wget -O del-tr "https://raw.githubusercontent.com/aryprabow/Script/main/del-tr.sh"
