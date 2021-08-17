@@ -1,5 +1,4 @@
 #!/bin/bash
-domain=$(cat /root/domain)
 apt install iptables iptables-persistent -y
 apt install curl socat xz-utils wget apt-transport-https gnupg gnupg2 gnupg1 dnsutils lsb-release -y 
 apt install socat cron bash-completion ntpdate -y
@@ -60,7 +59,7 @@ cat> /etc/v2ray/config.json << END
         "wsSettings": {
           "path": "/v2ray",
           "headers": {
-            "Host": ""
+            "Host": "$IP"
           }
          },
         "quicSettings": {},
@@ -76,7 +75,7 @@ cat> /etc/v2ray/config.json << END
           "tls"
         ]
       },
-      "domain": "$domain"
+      "domain": "$IP"
     }
   ],
   "outbounds": [
@@ -148,7 +147,7 @@ cat> /etc/v2ray/none.json << END
         "wsSettings": {
           "path": "/v2ray",
           "headers": {
-            "Host": ""
+            "Host": "$IP"
           }
          },
         "quicSettings": {},
@@ -164,7 +163,7 @@ cat> /etc/v2ray/none.json << END
           "tls"
         ]
       },
-      "domain": "$domain"
+      "domain": "$IP"
     }
   ],
   "outbounds": [
@@ -245,7 +244,7 @@ cat> /etc/v2ray/vless.json << END
         "wsSettings": {
           "path": "/v2ray",
           "headers": {
-            "Host": ""
+            "Host": "$IP"
           }
          },
         "quicSettings": {},
@@ -332,7 +331,7 @@ cat> /etc/v2ray/vnone.json << END
         "wsSettings": {
           "path": "/v2ray",
           "headers": {
-            "Host": ""
+            "Host": "$IP"
           }
          },
         "quicSettings": {},
@@ -348,7 +347,7 @@ cat> /etc/v2ray/vnone.json << END
           "tls"
         ]
       },
-      "domain": "$domain"
+      "domain": "$IP"
     }
   ],
   "outbounds": [
@@ -424,7 +423,7 @@ cat <<EOF > /etc/trojan/config.json
         "dhparam": ""
     },
     "tcp": {
-        "prefer_ipv4": false,
+        "prefer_ipv4": true,
         "no_delay": true,
         "keep_alive": true,
         "reuse_port": false,
@@ -491,7 +490,7 @@ systemctl enable trojan
 systemctl restart v2ray
 systemctl enable v2ray
 cd /usr/bin
-wget -O add-ws "https://raw.githubusercontent.com/aryprabow/Script/main/add-ws.sh"
+wget -O add-ws "https://raw.githubusercontent.com/daniertg/jraussh/master/add-ws.sh"
 wget -O add-vless "https://raw.githubusercontent.com/aryprabow/Script/main/add-vless.sh"
 wget -O add-tr "https://raw.githubusercontent.com/daniertg/jraussh/master/add-tr.sh"
 wget -O del-ws "https://raw.githubusercontent.com/aryprabow/Script/main/del-ws.sh"
