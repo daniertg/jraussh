@@ -6,7 +6,6 @@ MYIP=$(wget -qO- icanhazip.com);
 echo "Checking VPS"
 clear
 source /var/lib/premium-script/ipvps.conf
-else
 domain=$IP
 fi
 tls="$(cat ~/log-install.txt | grep -w "Vmess TLS" | cut -d: -f2|sed 's/ //g')"
@@ -39,7 +38,7 @@ cat>/etc/v2ray/$user-tls.json<<EOF
       "net": "ws",
       "path": "/v2ray",
       "type": "none",
-      "host": "",
+      "host": "$IP",
       "tls": "tls"
 }
 EOF
@@ -54,7 +53,7 @@ cat>/etc/v2ray/$user-none.json<<EOF
       "net": "ws",
       "path": "/v2ray",
       "type": "none",
-      "host": "",
+      "host": "$IP",
       "tls": "none"
 }
 EOF
