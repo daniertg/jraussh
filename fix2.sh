@@ -356,9 +356,7 @@ cd
 
 rm -f /root/openssh.sh
 
-# install v2ray
-wget https://raw.githubusercontent.com/daniertg/jraussh/main/ins-vt.sh && chmod +x ins-vt.sh && ./ins-vt.sh
-clear
+
 
 echo "================  install OPENVPN  saya disable======================"
 echo "========================================================="
